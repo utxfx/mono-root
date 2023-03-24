@@ -1,6 +1,6 @@
 
 import { StringX, sx } from './sx'
-import { after } from '../../../packages/core/src/string/after'
+import { after } from '../after'
 
 declare module './sx' {
 	interface StringX {
