@@ -21,7 +21,7 @@
 	],
 	"license": "MIT",
 	"scripts": {
-		"test": "ts-node src/scripts/runTests.ts",
+		"test": "ts-node ../../src/scripts/runTests.ts",
 		"coverage": "\"tests/output/coverage/lcov-report/index.html\"",
 		"clean": "rimraf build && rimraf tsconfig.tsbuildinfo",
 		"build": "tsc --build --verbose",
