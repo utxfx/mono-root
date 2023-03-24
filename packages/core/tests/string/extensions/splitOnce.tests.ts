@@ -2,7 +2,7 @@
 import { sx } from '../../../src/string/extensions/sx'
 import '../../../src/string/extensions/splitOnce'
 
-describe('utxfx', () => {
+describe('@utxfx/core', () => {
 	test('sx.splitOnce', () => {
 		expect(sx().splitOnce('')).toEqual([''])
 		expect(sx('').splitOnce('')).toEqual([''])
@@ -15,5 +15,7 @@ describe('utxfx', () => {
 		expect(sx('abc').splitOnce('a')).toEqual(['', 'bc'])
 		expect(sx('abc').splitOnce('b')).toEqual(['a', 'c'])
 		expect(sx('abc').splitOnce('c')).toEqual(['ab', ''])
+		expect(sx('abcabc').splitOnce('a')).toEqual(['', 'bcabc'])
+		expect(sx('abcabc').splitOnce('a', true)).toEqual(['abc', 'bc'])
 	})
 })
