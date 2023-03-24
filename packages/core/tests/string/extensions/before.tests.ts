@@ -2,7 +2,7 @@
 import { sx } from '../../../src/string/extensions/sx'
 import '../../../src/string/extensions/before'
 
-describe('utxfx', () => {
+describe('@utxfx/core', () => {
 	test('sx.before', () => {
 		expect(sx().before('')).toEqual(sx(''))
 		expect(sx().before('a')).toEqual(sx(''))

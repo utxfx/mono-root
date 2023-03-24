@@ -2,7 +2,7 @@
 import { sx } from '../../../src/string/extensions/sx'
 import '../../../src/string/extensions/lookForAll'
 
-describe('utxfx', () => {
+describe('@utxfx/core', () => {
 	test('sx.lookForAll', () => {
 		expect(sx().lookForAll('')).toEqual([])
 		expect(sx().lookForAll('a')).toEqual([])

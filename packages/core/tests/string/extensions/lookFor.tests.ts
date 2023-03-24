@@ -3,7 +3,7 @@ import { sx } from '../../../src/string/extensions/sx'
 import { NotFound } from '../../../src/string/lookFor'
 import '../../../src/string/extensions/lookFor'
 
-describe('utxfx', () => {
+describe('@utxfx/core', () => {
 	test('sx.lookFor', () => {
 		expect(sx().lookFor('')).toEqual(NotFound)
 		expect(sx().lookFor('a')).toEqual(NotFound)

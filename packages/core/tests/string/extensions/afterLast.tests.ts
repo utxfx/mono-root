@@ -2,7 +2,7 @@
 import { sx } from '../../../src/string/extensions/sx'
 import '../../../src/string/extensions/afterLast'
 
-describe('utxfx', () => {
+describe('@utxfx/core', () => {
 	test('sx.afterLast', () => {
 		expect(sx().afterLast('')).toEqual(sx(''))
 		expect(sx().afterLast('a')).toEqual(sx(''))
