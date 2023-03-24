@@ -6,3 +6,13 @@ export class StringX extends String {
 }
 
 export const sx = (value?: string) => new StringX(value)
+
+declare global {
+	interface String {
+		sx(): StringX
+	}
+}
+
+String.prototype.sx = function () {
+	return sx(this.valueOf())
+}
