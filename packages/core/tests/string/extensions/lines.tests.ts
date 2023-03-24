@@ -2,7 +2,7 @@
 import { sx } from '../../../src/string/extensions/sx'
 import '../../../src/string/extensions/lines'
 
-describe('utxfx', () => {
+describe('@utxfx/core', () => {
 	test('sx.lines', () => {
 		expect(sx().lines()).toEqual([''])
 		expect(sx('').lines()).toEqual([''])
@@ -13,5 +13,7 @@ describe('utxfx', () => {
 		expect(sx('a\nb').lines()).toEqual(['a', 'b'])
 		expect(sx('a\r\nb').lines()).toEqual(['a', 'b'])
 		expect(sx('a\rb').lines()).toEqual(['a\rb'])
+
+		expect(sx().lines('joe')).toEqual(['joe'])
 	})
 })

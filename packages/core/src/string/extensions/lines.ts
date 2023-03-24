@@ -4,10 +4,10 @@ import { lines } from '../lines'
 
 declare module './sx' {
 	interface StringX {
-		lines(): string[]
+		lines(prefix?: string): string[]
 	}
 }
 
-StringX.prototype.lines = function (): string[] {
-	return lines(this.valueOf())
+StringX.prototype.lines = function (prefix = ''): string[] {
+	return lines(this.valueOf(), prefix)
 }
