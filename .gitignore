@@ -7,3 +7,6 @@
 *.tsbuildinfo
 build
 tests/output
+packages/*/build
+packages/*/tests/output
+packages/*/*.tsbuildinfo
