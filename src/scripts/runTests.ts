@@ -2,9 +2,10 @@
 import os from 'os'
 import fs from 'fs'
 import path from 'path'
-import { exec } from 'child_process'
 
-const rootFolder = path.resolve(__dirname, '../..')
+import { cmd } from '../cmd'
+
+const rootFolder = process.cwd()//path.resolve(__dirname, '../..')
 const logFile = 'tests/output/logs/tests.log'
 fs.writeFileSync(path.join(rootFolder, logFile), '')
 
@@ -12,24 +13,21 @@ console.clear()
 console.log('-- Running tests...')
 console.log()
 
-exec('yarn jest --no-color', { cwd: rootFolder }, (error, stdout, stderr) => {
-	let msg = ''
-	if (error)
-		msg += `Error(${error.code}): ${error.message}`
-	if (stdout || stderr){
-		msg += `Tests completed.${os.EOL}`
-		if (stdout)
-			msg += `${os.EOL}${stdout}`
-		if (stderr)
-			msg += os.EOL
-				+ stderr.split(/\r?\n/g)
-					.filter(line => 
-						line != 'Debugger attached.'
-						&& line != 'Waiting for the debugger to disconnect...')
-					.join(os.EOL)
-	}
-	if (msg) {
-		console.log(msg)
-		fs.appendFileSync(logFile, msg)
-	}
-})
+const result = cmd('yarn', 'jest', '--no-color')
+let msg = ''
+if (result.error)
+	msg += `Error(${result.status}): ${result.error.message}`
+else if (result.status != 0)
+	msg += `Error(${result.status})`
+if (result.stdout || result.stderr){
+	msg += `Tests completed.${os.EOL}`
+	if (result.stdout)
+		msg += `${os.EOL}${result.stdout}`
+	if (result.stderr)
+		msg += `${os.EOL}${result.stderr}`
+}
+if (msg) {
+	console.log(msg)
+	fs.appendFileSync(logFile, msg)
+}
+
