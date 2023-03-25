@@ -31,21 +31,15 @@ export const runScript = (log: CliOutput, pkg: Package, script: string, verbose:
 	cd(pkg.location, () => {
 		log(`-- Running script '${script}' in '${cd()}'...`)
 		const result = cmd('yarn', script)
-		if (result.error)
-			log.error(`-- Error(${result.status}): ${result.error.message}`)
-		else if (result.status != 0)
-			log.error(`-- Error(${result.status})`)
-		else if (!verbose)
-			log('-- Success.')
 		if (verbose && result.stderr)
 			log.error(result.stderr)
 		if (verbose && result.stdout)
 			log(result.stdout)
-		if (verbose){
-			if (result.error || result.status != 0)
-				log.error('\n-- Failed.')
-			else
-				log('\n-- Success.')
-		}
+		if (result.error)
+			log.error(`-- Error: ${result.error.message}`)
+		else if (result.status != 0)
+			log.error(`-- Error - exit code = ${result.status}`)
+		else
+			log('-- Success.')
 	})
 }
