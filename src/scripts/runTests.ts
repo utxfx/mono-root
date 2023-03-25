@@ -9,25 +9,36 @@ const rootFolder = process.cwd()//path.resolve(__dirname, '../..')
 const logFile = 'tests/output/logs/tests.log'
 fs.writeFileSync(path.join(rootFolder, logFile), '')
 
+let msg = ''
+const add = (text: string) =>
+	msg += `${text.replace(/\r?\n/g, os.EOL)}${os.EOL}`
+
+const out = (text: string) => {
+	if (!text)
+		return
+	add(text)
+	console.log(text.replace(/\r\n/g, '\n'))
+}
+
+const err = (text: string) => {
+	if (!text)
+		return
+	add(text)
+	console.error(text.replace(/\r\n/g, '\n'))
+}
+
 console.clear()
-console.log('-- Running tests...')
-console.log()
+out('\n-- Running tests...\n')
 
 const result = cmd('yarn', 'jest', '--no-color')
-let msg = ''
+out(result.stdout)
+err(result.stderr)
 if (result.error)
-	msg += `Error(${result.status}): ${result.error.message}`
+	err(`-- Error: ${result.error.message}`)
 else if (result.status != 0)
-	msg += `Error(${result.status})`
-if (result.stdout || result.stderr){
-	msg += `Tests completed.${os.EOL}`
-	if (result.stdout)
-		msg += `${os.EOL}${result.stdout}`
-	if (result.stderr)
-		msg += `${os.EOL}${result.stderr}`
-}
-if (msg) {
-	console.log(msg)
-	fs.appendFileSync(logFile, msg)
-}
+	err(`-- Error - exit code = ${result.status}`)
+else
+	out('-- Success.')
 
+if (msg)
+	fs.appendFileSync(logFile, msg)
