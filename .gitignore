@@ -6,7 +6,7 @@
 .pnp.*
 *.tsbuildinfo
 build
-tests/output
+tests/output/coverage
 packages/*/build
 packages/*/tests/output/coverage
 packages/*/*.tsbuildinfo
