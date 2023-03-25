@@ -27,7 +27,6 @@ const err = (text: string) => {
 	console.error(text.replace(/\r\n/g, '\n'))
 }
 
-console.clear()
 out('\n-- Running tests...\n')
 
 const result = cmd('yarn', 'jest', '--no-color')
