@@ -25,5 +25,18 @@ describe('@utxfx/core', () => {
 
 		expect(jsonToString({}, tab, eol)).toEqual(`{}`)
 		expect(jsonToString({ a: { b: 1 } }, tab, eol)).toEqual(`{${eol}${tab}"a": {${eol}${tab}${tab}"b": 1${eol}${tab}}${eol}}`)
+		
+		expect(jsonToString({
+			joe: 'bob',
+			foo: false,
+			num: 123
+		}, tab, eol))
+		.toEqual(
+			`{${eol}` +
+			`${tab}"joe": "bob",${eol}` +
+			`${tab}"foo": false,${eol}` +
+			`${tab}"num": 123${eol}` +
+			`}`)
+		// "{\n\t\"joe\": \"bob\",\n\t\"foo\": false,\n\t\"num\": 123\n}"
 	})
 })
