@@ -3,30 +3,36 @@ Tests completed.
 -------------------------------------|---------|----------|---------|---------|-------------------
 File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -------------------------------------|---------|----------|---------|---------|-------------------
-All files                            |   53.16 |    89.77 |   76.47 |   53.16 |                   
+All files                            |   70.24 |    94.94 |   85.48 |   70.24 |                   
+ packages/core/src                   |       0 |        0 |       0 |       0 |                   
+  JsonObject.ts                      |       0 |        0 |       0 |       0 | 1-4               
  packages/core/src/object/extensions |     100 |      100 |     100 |     100 |                   
   ox.ts                              |     100 |      100 |     100 |     100 |                   
- packages/core/src/string            |     100 |    98.27 |     100 |     100 |                   
+ packages/core/src/string            |     100 |      100 |     100 |     100 |                   
   after.ts                           |     100 |      100 |     100 |     100 |                   
   afterLast.ts                       |     100 |      100 |     100 |     100 |                   
   before.ts                          |     100 |      100 |     100 |     100 |                   
   beforeLast.ts                      |     100 |      100 |     100 |     100 |                   
+  json.ts                            |     100 |      100 |     100 |     100 |                   
   lines.ts                           |     100 |      100 |     100 |     100 |                   
   lookFor.ts                         |     100 |      100 |     100 |     100 |                   
   lookForAll.ts                      |     100 |      100 |     100 |     100 |                   
   lookForLast.ts                     |     100 |      100 |     100 |     100 |                   
-  splitOnce.ts                       |     100 |       75 |     100 |     100 | 9                 
+  splitOnce.ts                       |     100 |      100 |     100 |     100 |                   
+  write.ts                           |     100 |      100 |     100 |     100 |                   
  packages/core/src/string/extensions |     100 |      100 |     100 |     100 |                   
   after.ts                           |     100 |      100 |     100 |     100 |                   
   afterLast.ts                       |     100 |      100 |     100 |     100 |                   
   before.ts                          |     100 |      100 |     100 |     100 |                   
   beforeLast.ts                      |     100 |      100 |     100 |     100 |                   
+  json.ts                            |     100 |      100 |     100 |     100 |                   
   lines.ts                           |     100 |      100 |     100 |     100 |                   
   lookFor.ts                         |     100 |      100 |     100 |     100 |                   
   lookForAll.ts                      |     100 |      100 |     100 |     100 |                   
   lookForLast.ts                     |     100 |      100 |     100 |     100 |                   
   splitOnce.ts                       |     100 |      100 |     100 |     100 |                   
   sx.ts                              |     100 |      100 |     100 |     100 |                   
+  write.ts                           |     100 |      100 |     100 |     100 |                   
  src                                 |       0 |        0 |       0 |       0 |                   
   cd.ts                              |       0 |        0 |       0 |       0 | 1-40              
   cmd.ts                             |       0 |        0 |       0 |       0 | 1-27              
@@ -36,58 +42,71 @@ All files                            |   53.16 |    89.77 |   76.47 |   53.16 |
   runAll.ts                          |       0 |        0 |       0 |       0 | 1-14              
   runOne.ts                          |       0 |        0 |       0 |       0 | 1-18              
   runTests.ts                        |       0 |        0 |       0 |       0 | 1-32              
-  utils.ts                           |       0 |        0 |       0 |       0 | 1-45              
+  utils.ts                           |       0 |        0 |       0 |       0 | 1-51              
 -------------------------------------|---------|----------|---------|---------|-------------------
-
-PASS packages/core/tests/string/extensions/lookFor.tests.ts
-  utxfx
-    √ sx.lookFor (17 ms)
-
-PASS packages/core/tests/string/extensions/before.tests.ts
-  utxfx
-    √ sx.before (5 ms)
-
-PASS packages/core/tests/string/extensions/after.tests.ts
-  utxfx
-    √ sx.after (5 ms)
-
-PASS packages/core/tests/string/extensions/lines.tests.ts
-  utxfx
-    √ sx.lines (5 ms)
-
-PASS packages/core/tests/string/extensions/beforeLast.tests.ts
-  utxfx
-    √ sx.beforeLast (5 ms)
-
-PASS packages/core/tests/string/extensions/lookForAll.tests.ts
-  utxfx
-    √ sx.lookForAll (6 ms)
-
-PASS packages/core/tests/string/extensions/lookForLast.tests.ts
-  utxfx
-    √ sx.lookForLast (4 ms)
-
-PASS packages/core/tests/string/extensions/afterLast.tests.ts
-  utxfx
-    √ sx.afterLast (4 ms)
 
 PASS packages/core/tests/object/extensions/ox.tests.ts
   utxfx
-    √ ox.valueOf (2 ms)
+    √ ox.valueOf (3 ms)
     √ ox.toString
-    √ ox.hasOwnProperty
-    √ ox.log (3 ms)
+    √ ox.hasOwnProperty (1 ms)
+    √ ox.log (2 ms)
+
+PASS packages/core/tests/string/json.tests.ts
+  @utxfx/core
+    √ jsonToString (5 ms)
+
+PASS packages/core/tests/string/extensions/after.tests.ts
+  @utxfx/core
+    √ sx.after (5 ms)
+
+PASS packages/core/tests/string/extensions/lines.tests.ts
+  @utxfx/core
+    √ sx.lines (5 ms)
+
+PASS packages/core/tests/string/extensions/afterLast.tests.ts
+  @utxfx/core
+    √ sx.afterLast (4 ms)
+
+PASS packages/core/tests/string/extensions/beforeLast.tests.ts
+  @utxfx/core
+    √ sx.beforeLast (5 ms)
+
+PASS packages/core/tests/string/extensions/before.tests.ts
+  @utxfx/core
+    √ sx.before (4 ms)
 
 PASS packages/core/tests/string/extensions/sx.tests.ts
-  utxfx
-    √ sx (1 ms)
+  @utxfx/core
+    √ sx (2 ms)
+
+PASS packages/core/tests/string/extensions/json.tests.ts
+  @utxfx/core
+    √ sx.parseJson (17 ms)
 
 PASS packages/core/tests/string/extensions/splitOnce.tests.ts
-  utxfx
-    √ sx.splitOnce (4 ms)
+  @utxfx/core
+    √ sx.splitOnce (5 ms)
 
-Test Suites: 11 passed, 11 total
-Tests:       14 passed, 14 total
+PASS packages/core/tests/string/extensions/lookForAll.tests.ts
+  @utxfx/core
+    √ sx.lookForAll (5 ms)
+
+PASS packages/core/tests/string/extensions/lookForLast.tests.ts
+  @utxfx/core
+    √ sx.lookForLast (4 ms)
+
+PASS packages/core/tests/string/extensions/write.tests.ts
+  @utxfx/core
+    √ sx.writer (8 ms)
+    √ sx.write
+
+PASS packages/core/tests/string/extensions/lookFor.tests.ts
+  @utxfx/core
+    √ sx.lookFor (5 ms)
+
+Test Suites: 14 passed, 14 total
+Tests:       18 passed, 18 total
 Snapshots:   0 total
-Time:        5.572 s
+Time:        7.376 s
 Ran all test suites.
