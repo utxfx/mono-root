@@ -1,0 +1,100 @@
+Tests completed.
+
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |     100 |      100 |     100 |     100 |                   
+ object/extensions |     100 |      100 |     100 |     100 |                   
+  ox.ts            |     100 |      100 |     100 |     100 |                   
+ string            |     100 |      100 |     100 |     100 |                   
+  after.ts         |     100 |      100 |     100 |     100 |                   
+  afterLast.ts     |     100 |      100 |     100 |     100 |                   
+  before.ts        |     100 |      100 |     100 |     100 |                   
+  beforeLast.ts    |     100 |      100 |     100 |     100 |                   
+  json.ts          |     100 |      100 |     100 |     100 |                   
+  lines.ts         |     100 |      100 |     100 |     100 |                   
+  lookFor.ts       |     100 |      100 |     100 |     100 |                   
+  lookForAll.ts    |     100 |      100 |     100 |     100 |                   
+  lookForLast.ts   |     100 |      100 |     100 |     100 |                   
+  splitOnce.ts     |     100 |      100 |     100 |     100 |                   
+  write.ts         |     100 |      100 |     100 |     100 |                   
+ string/extensions |     100 |      100 |     100 |     100 |                   
+  after.ts         |     100 |      100 |     100 |     100 |                   
+  afterLast.ts     |     100 |      100 |     100 |     100 |                   
+  before.ts        |     100 |      100 |     100 |     100 |                   
+  beforeLast.ts    |     100 |      100 |     100 |     100 |                   
+  json.ts          |     100 |      100 |     100 |     100 |                   
+  lines.ts         |     100 |      100 |     100 |     100 |                   
+  lookFor.ts       |     100 |      100 |     100 |     100 |                   
+  lookForAll.ts    |     100 |      100 |     100 |     100 |                   
+  lookForLast.ts   |     100 |      100 |     100 |     100 |                   
+  splitOnce.ts     |     100 |      100 |     100 |     100 |                   
+  sx.ts            |     100 |      100 |     100 |     100 |                   
+  write.ts         |     100 |      100 |     100 |     100 |                   
+-------------------|---------|----------|---------|---------|-------------------
+
+PASS tests/string/extensions/afterLast.tests.ts
+  @utxfx/core
+    √ sx.afterLast (28 ms)
+
+PASS tests/string/extensions/after.tests.ts
+  @utxfx/core
+    √ sx.after (9 ms)
+
+PASS tests/object/extensions/ox.tests.ts
+  utxfx
+    √ ox.valueOf (6 ms)
+    √ ox.toString
+    √ ox.hasOwnProperty (1 ms)
+    √ ox.log (2 ms)
+
+PASS tests/string/extensions/lines.tests.ts
+  @utxfx/core
+    √ sx.lines (130 ms)
+
+PASS tests/string/extensions/lookForLast.tests.ts
+  @utxfx/core
+    √ sx.lookForLast (4 ms)
+
+PASS tests/string/json.tests.ts
+  @utxfx/core
+    √ jsonToString (12 ms)
+
+PASS tests/string/extensions/json.tests.ts
+  @utxfx/core
+    √ sx.parseJson (39 ms)
+
+PASS tests/string/extensions/splitOnce.tests.ts
+  @utxfx/core
+    √ sx.splitOnce (11 ms)
+
+PASS tests/string/extensions/beforeLast.tests.ts
+  @utxfx/core
+    √ sx.beforeLast (10 ms)
+
+PASS tests/string/extensions/lookForAll.tests.ts
+  @utxfx/core
+    √ sx.lookForAll (11 ms)
+
+PASS tests/string/extensions/write.tests.ts
+  @utxfx/core
+    √ sx.writer (9 ms)
+    √ sx.write
+
+PASS tests/string/extensions/sx.tests.ts
+  @utxfx/core
+    √ sx (2 ms)
+
+PASS tests/string/extensions/lookFor.tests.ts
+  @utxfx/core
+    √ sx.lookFor (13 ms)
+
+PASS tests/string/extensions/before.tests.ts
+  @utxfx/core
+    √ sx.before (3 ms)
+
+Test Suites: 14 passed, 14 total
+Tests:       18 passed, 18 total
+Snapshots:   0 total
+Time:        6.657 s
+Ran all test suites.

@@ -8,5 +8,5 @@
 build
 tests/output
 packages/*/build
-packages/*/tests/output
+packages/*/tests/output/coverage
 packages/*/*.tsbuildinfo
