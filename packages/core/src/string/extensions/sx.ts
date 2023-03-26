@@ -9,10 +9,10 @@ export const sx = (value?: string) => new StringX(value)
 
 declare global {
 	interface String {
-		sx(): StringX
+		$x(): StringX
 	}
 }
 
-String.prototype.sx = function () {
+String.prototype.$x = function () {
 	return sx(this.valueOf())
 }

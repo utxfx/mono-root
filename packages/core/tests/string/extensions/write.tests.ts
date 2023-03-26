@@ -41,31 +41,31 @@ describe('@utxfx/core', () => {
 		expect(w.atNewline).toBe(true)
 		expect(w.lastChar).toBe(Ch.Indent)
 
-		expect(''.sx().writer({ depth: 2 }).write('a').text)
+		expect(''.$x().writer({ depth: 2 }).write('a').text)
 			.toBe(`${tab}${tab}a${eol}`)
 
-		expect(''.sx().writer({ atNewline: false }).write('a').text)
+		expect(''.$x().writer({ atNewline: false }).write('a').text)
 			.toBe(`a${eol}`)
 
-		expect(''.sx().writer({ atNewline: false }).put(Ch.Indent).text)
+		expect(''.$x().writer({ atNewline: false }).put(Ch.Indent).text)
 			.toBe(eol)
 
-		expect(''.sx().writer({ atNewline: false }).put(Ch.Dedent).depth)
+		expect(''.$x().writer({ atNewline: false }).put(Ch.Dedent).depth)
 			.toBe(0)
 
 		const funkyEol = 'funky'
-		expect(''.sx().writer({ eol: funkyEol }).write('a').text)
+		expect(''.$x().writer({ eol: funkyEol }).write('a').text)
 			.toBe(`a${funkyEol}`)
-		expect(''.sx().writer({ eol: funkyEol }, { depth: 1 }).write('a').text)
+		expect(''.$x().writer({ eol: funkyEol }, { depth: 1 }).write('a').text)
 			.toBe(`${tab}a${funkyEol}`)
 		expect(writer('a', { eol: funkyEol }, { depth: 1 }).write('b').text)
 			.toBe(`${tab}a${funkyEol}${tab}b${funkyEol}`)
 
 		const tab2 = 2
-		expect(''.sx().writer({ tab: tab2 }, { depth: 1 }).write('a').text)
+		expect(''.$x().writer({ tab: tab2 }, { depth: 1 }).write('a').text)
 			.toBe(`${' '.repeat(tab2)}a${eol}`)
 		
-		expect('abc'.sx().writer().text).toBe(`abc${eol}`)
+		expect('abc'.$x().writer().text).toBe(`abc${eol}`)
 		
 		expect(sx().writer().write(
 			'class Test {', [
