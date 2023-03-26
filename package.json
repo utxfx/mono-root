@@ -14,6 +14,10 @@
     "pnp"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/utxfx/mono-root.git"
+  },
   "scripts": {
     "all": "ts-node src/scripts/runAll.ts",
     "one": "ts-node src/scripts/runOne.ts",
