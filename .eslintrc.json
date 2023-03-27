@@ -21,7 +21,8 @@
     "indent": [
       "error",
       "tab",
-       { "SwitchCase": 1 }
+       { "SwitchCase": 1 },
+       { "FunctionExpression": { "body": 1 } }
     ],
     "linebreak-style": [
       "error",
