@@ -5,6 +5,11 @@
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------|---------|----------|---------|---------|-------------------
 All files            |     100 |      100 |     100 |     100 |                   
+ array               |     100 |      100 |     100 |     100 |                   
+  peek.ts            |     100 |      100 |     100 |     100 |                   
+ array/extensions    |     100 |      100 |     100 |     100 |                   
+  ax.ts              |     100 |      100 |     100 |     100 |                   
+  peek.ts            |     100 |      100 |     100 |     100 |                   
  function            |     100 |      100 |     100 |     100 |                   
   constrain.ts       |     100 |      100 |     100 |     100 |                   
   ensure.ts          |     100 |      100 |     100 |     100 |                   
@@ -41,80 +46,88 @@ All files            |     100 |      100 |     100 |     100 |
   write.ts           |     100 |      100 |     100 |     100 |                   
 ---------------------|---------|----------|---------|---------|-------------------
 
-PASS tests/string/extensions/sx.tests.ts
+PASS tests/string/extensions/json.tests.ts
   @utxfx/core
-    √ sx (6 ms)
-
-PASS tests/string/extensions/lines.tests.ts
-  @utxfx/core
-    √ sx.lines (13 ms)
+    √ sx.parseJson (23 ms)
 
 PASS tests/string/extensions/lookForLast.tests.ts
   @utxfx/core
     √ sx.lookForLast (4 ms)
 
-PASS tests/function/extensions/fx.tests.ts (5.043 s)
+PASS tests/string/json.tests.ts
   @utxfx/core
-    √ fx.require (55 ms)
-    √ fx.ensure (11 ms)
-    √ fx.verify (11 ms)
+    √ jsonToString (27 ms)
 
-PASS tests/string/extensions/lookForAll.tests.ts (5.069 s)
+PASS tests/string/extensions/lines.tests.ts
   @utxfx/core
-    √ sx.lookForAll (6 ms)
-
-PASS tests/string/extensions/afterLast.tests.ts (5.168 s)
-  @utxfx/core
-    √ sx.afterLast (5 ms)
-
-PASS tests/object/extensions/ox.tests.ts
-  utxfx
-    √ ox.valueOf (2 ms)
-    √ ox.toString
-    √ ox.hasOwnProperty (1 ms)
-    √ ox.log (2 ms)
-
-PASS tests/string/extensions/json.tests.ts (5.083 s)
-  @utxfx/core
-    √ sx.parseJson (28 ms)
-
-PASS tests/string/extensions/write.tests.ts (5.065 s)
-  @utxfx/core
-    √ sx.writer (9 ms)
-    √ sx.write
-
-PASS tests/function/constrain.tests.ts (5.118 s)
-  @utxfx/core
-    √ constrain (23 ms)
-
-PASS tests/string/json.tests.ts (5.23 s)
-  @utxfx/core
-    √ jsonToString (14 ms)
+    √ sx.lines (7 ms)
 
 PASS tests/string/extensions/lookFor.tests.ts
   @utxfx/core
-    √ sx.lookFor (16 ms)
+    √ sx.lookFor (9 ms)
 
-PASS tests/string/extensions/splitOnce.tests.ts
+PASS tests/function/extensions/fx.tests.ts (5.001 s)
   @utxfx/core
-    √ sx.splitOnce (3 ms)
+    √ fx.require (22 ms)
+    √ fx.ensure (3 ms)
+    √ fx.verify (14 ms)
+
+PASS tests/string/extensions/lookForAll.tests.ts
+  @utxfx/core
+    √ sx.lookForAll (20 ms)
+
+PASS tests/array/extensions/peek.tests.ts
+  @utxfx/core
+    √ ax.peek (3 ms)
+
+PASS tests/string/extensions/after.tests.ts (5.129 s)
+  @utxfx/core
+    √ sx.after (8 ms)
+
+PASS tests/string/extensions/write.tests.ts (5.287 s)
+  @utxfx/core
+    √ sx.writer (20 ms)
+    √ sx.write (1 ms)
 
 PASS tests/string/extensions/before.tests.ts
   @utxfx/core
     √ sx.before (5 ms)
 
-PASS tests/string/extensions/beforeLast.tests.ts (5.193 s)
+PASS tests/function/constrain.tests.ts (5.092 s)
   @utxfx/core
-    √ sx.beforeLast (5 ms)
+    √ constrain (23 ms)
 
-PASS tests/string/extensions/after.tests.ts (5.148 s)
+PASS tests/string/extensions/sx.tests.ts
   @utxfx/core
-    √ sx.after (7 ms)
+    √ sx (3 ms)
 
-Test Suites: 16 passed, 16 total
-Tests:       22 passed, 22 total
+PASS tests/object/extensions/ox.tests.ts (5.166 s)
+  utxfx
+    √ ox.valueOf (3 ms)
+    √ ox.toString (1 ms)
+    √ ox.hasOwnProperty
+    √ ox.log (2 ms)
+
+PASS tests/string/extensions/splitOnce.tests.ts
+  @utxfx/core
+    √ sx.splitOnce (4 ms)
+
+PASS tests/array/extensions/ax.tests.ts (5.238 s)
+  @utxfx/core
+    √ ArrayX (8 ms)
+
+PASS tests/string/extensions/beforeLast.tests.ts (5.341 s)
+  @utxfx/core
+    √ sx.beforeLast (4 ms)
+
+PASS tests/string/extensions/afterLast.tests.ts (5.277 s)
+  @utxfx/core
+    √ sx.afterLast (3 ms)
+
+Test Suites: 18 passed, 18 total
+Tests:       24 passed, 24 total
 Snapshots:   0 total
-Time:        9.273 s
+Time:        7.94 s
 Ran all test suites.
 
 -- Success.
