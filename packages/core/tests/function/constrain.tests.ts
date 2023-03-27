@@ -27,7 +27,7 @@ describe('@utxfx/core', () => {
 
 		expect(() => fn2('', 1))
 			.toThrow(
-				`Tree failure in function 'fn3':\n` +
+				`Tree failure in function 'fn2':\n` +
 				`  Arguments 'arg1' and 'arg2' should satisfy constraint '!!arg1 && arg2 > 0'.\n` +
 				'  Argument values: arg1 = "", arg2 = 1')
 
@@ -40,7 +40,7 @@ describe('@utxfx/core', () => {
 
 		expect(() => fn3('', 1))
 			.toThrow(
-				`Precondition failure in function 'fn2':\n` +
+				`Precondition failure in function 'fn3':\n` +
 				`  Args 'arg1' and 'arg2' should satisfy constraint '!!arg1 && arg2 > 0'.\n` +
 				'  Arg values: arg1 = "", arg2 = 1')
 	})
