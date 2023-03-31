@@ -20,11 +20,16 @@
 		"array"
 	],
 	"license": "MIT",
+	"repository": {
+	  "type": "git",
+	  "url": "https://github.com/utxfx/mono-root.git",
+	  "directory": "packages/core"
+	},
 	"scripts": {
 		"test": "ts-node ../../src/scripts/runTests.ts",
 		"coverage": "\"tests/output/coverage/lcov-report/index.html\"",
 		"clean": "rimraf build && rimraf tsconfig.tsbuildinfo",
-		"build": "tsc --build --verbose",
+		"build": "tsc --build",
 		"re-build": "yarn clean && yarn build"
 	},
 	"devDependencies": {
