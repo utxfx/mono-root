@@ -4,9 +4,11 @@
 ---------------------------------------|---------|----------|---------|---------|-------------------
 File                                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------------------------|---------|----------|---------|---------|-------------------
-All files                              |   75.97 |    95.83 |   88.46 |   75.97 |                   
- packages/core/src                     |       0 |        0 |       0 |       0 |                   
+All files                              |   69.07 |    95.19 |    86.9 |   69.07 |                   
+ packages/core/src                     |   52.63 |       50 |   33.33 |   52.63 |                   
   JsonObject.ts                        |       0 |        0 |       0 |       0 | 1-4               
+  extension.ts                         |     100 |      100 |     100 |     100 |                   
+  extensions.ts                        |       0 |        0 |       0 |       0 | 1-5               
  packages/core/src/array               |     100 |      100 |     100 |     100 |                   
   peek.ts                              |     100 |      100 |     100 |     100 |                   
  packages/core/src/array/extensions    |     100 |      100 |     100 |     100 |                   
@@ -46,6 +48,8 @@ All files                              |   75.97 |    95.83 |   88.46 |   75.97 
   splitOnce.ts                         |     100 |      100 |     100 |     100 |                   
   sx.ts                                |     100 |      100 |     100 |     100 |                   
   write.ts                             |     100 |      100 |     100 |     100 |                   
+ packages/fs/src                       |       0 |        0 |       0 |       0 |                   
+  path.ts                              |       0 |        0 |       0 |       0 | 1-115             
  src                                   |       0 |        0 |       0 |       0 |                   
   cd.ts                                |       0 |        0 |       0 |       0 | 1-40              
   cmd.ts                               |       0 |        0 |       0 |       0 | 1-27              
@@ -58,88 +62,93 @@ All files                              |   75.97 |    95.83 |   88.46 |   75.97 
   utils.ts                             |       0 |        0 |       0 |       0 | 1-45              
 ---------------------------------------|---------|----------|---------|---------|-------------------
 
-PASS packages/core/tests/string/extensions/beforeLast.tests.ts
+PASS packages/core/tests/string/extensions/afterLast.tests.ts (5.496 s)
   @utxfx/core
-    √ sx.beforeLast (7 ms)
+    √ sx.afterLast (5 ms)
 
-PASS packages/core/tests/function/extensions/fx.tests.ts
+PASS packages/core/tests/string/extensions/lookForAll.tests.ts (5.749 s)
   @utxfx/core
-    √ fx.require (23 ms)
-    √ fx.ensure (2 ms)
-    √ fx.verify (20 ms)
+    √ sx.lookForAll (7 ms)
 
-PASS packages/core/tests/string/extensions/lookFor.tests.ts
+PASS packages/core/tests/string/extensions/before.tests.ts (5.756 s)
   @utxfx/core
-    √ sx.lookFor (15 ms)
+    √ sx.before (4 ms)
 
-PASS packages/core/tests/string/extensions/write.tests.ts
+PASS packages/core/tests/string/json.tests.ts (5.922 s)
   @utxfx/core
-    √ sx.writer (9 ms)
-    √ sx.write
+    √ jsonToString (30 ms)
 
-PASS packages/core/tests/string/extensions/splitOnce.tests.ts
+PASS packages/core/tests/object/extensions/ox.tests.ts (6.056 s)
+  utxfx
+    √ ox.valueOf (16 ms)
+    √ ox.toString (1 ms)
+    √ ox.$v (16 ms)
+    √ ox.hasOwnProperty (1 ms)
+    √ ox.log (2 ms)
+
+PASS packages/core/tests/string/extensions/write.tests.ts (6.129 s)
   @utxfx/core
-    √ sx.splitOnce (6 ms)
+    √ sx.writer (14 ms)
+    √ sx.write (1 ms)
 
-PASS packages/core/tests/function/constrain.tests.ts
+PASS packages/core/tests/string/extensions/lines.tests.ts (6.27 s)
   @utxfx/core
-    √ constrain (37 ms)
+    √ sx.lines (32 ms)
 
-PASS packages/core/tests/string/extensions/after.tests.ts
+PASS packages/core/tests/string/extensions/json.tests.ts (6.198 s)
   @utxfx/core
-    √ sx.after (11 ms)
+    √ sx.parseJson (21 ms)
 
-PASS packages/core/tests/string/extensions/sx.tests.ts
+PASS packages/core/tests/string/extensions/sx.tests.ts (6.337 s)
   @utxfx/core
     √ sx (4 ms)
 
-PASS packages/core/tests/string/extensions/lines.tests.ts
+PASS packages/core/tests/function/extensions/fx.tests.ts (6.36 s)
   @utxfx/core
-    √ sx.lines (14 ms)
+    √ fx.require (58 ms)
+    √ fx.ensure (4 ms)
+    √ fx.verify (13 ms)
 
-PASS packages/core/tests/string/extensions/json.tests.ts (5.037 s)
+PASS packages/core/tests/string/extensions/lookFor.tests.ts (6.322 s)
   @utxfx/core
-    √ sx.parseJson (54 ms)
+    √ sx.lookFor (10 ms)
 
-PASS packages/core/tests/string/json.tests.ts
+PASS packages/core/tests/array/extensions/peek.tests.ts (6.343 s)
   @utxfx/core
-    √ jsonToString (14 ms)
+    √ ax.peek (15 ms)
 
-PASS packages/core/tests/object/extensions/ox.tests.ts (5.194 s)
-  utxfx
-    √ ox.valueOf (2 ms)
-    √ ox.toString (1 ms)
-    √ ox.hasOwnProperty
-    √ ox.log (2 ms)
-
-PASS packages/core/tests/string/extensions/lookForLast.tests.ts (5.211 s)
+PASS packages/core/tests/string/extensions/lookForLast.tests.ts
   @utxfx/core
-    √ sx.lookForLast (9 ms)
+    √ sx.lookForLast (3 ms)
 
-PASS packages/core/tests/string/extensions/afterLast.tests.ts
+PASS packages/core/tests/extension.tests.ts
   @utxfx/core
-    √ sx.afterLast (3 ms)
+    √ isExtension (3 ms)
 
-PASS packages/core/tests/string/extensions/lookForAll.tests.ts (5.121 s)
+PASS packages/core/tests/function/constrain.tests.ts (6.429 s)
   @utxfx/core
-    √ sx.lookForAll (10 ms)
-
-PASS packages/core/tests/string/extensions/before.tests.ts (5.29 s)
-  @utxfx/core
-    √ sx.before (7 ms)
-
-PASS packages/core/tests/array/extensions/peek.tests.ts
-  @utxfx/core
-    √ ax.peek (2 ms)
+    √ constrain (24 ms)
 
 PASS packages/core/tests/array/extensions/ax.tests.ts
   @utxfx/core
-    √ ArrayX (2 ms)
+    √ ArrayX (5 ms)
 
-Test Suites: 18 passed, 18 total
-Tests:       24 passed, 24 total
+PASS packages/core/tests/string/extensions/after.tests.ts
+  @utxfx/core
+    √ sx.after (2 ms)
+
+PASS packages/core/tests/string/extensions/beforeLast.tests.ts (6.474 s)
+  @utxfx/core
+    √ sx.beforeLast (3 ms)
+
+PASS packages/core/tests/string/extensions/splitOnce.tests.ts (6.412 s)
+  @utxfx/core
+    √ sx.splitOnce (6 ms)
+
+Test Suites: 19 passed, 19 total
+Tests:       26 passed, 26 total
 Snapshots:   0 total
-Time:        7.787 s
+Time:        8.915 s
 Ran all test suites.
 
 -- Success.

@@ -1,0 +1,14 @@
+
+-- Running tests...
+
+No tests found, exiting with code 1
+Run with `--passWithNoTests` to exit with code 0
+In D:\Code\typescript\utxfx\packages\fs
+  1 file checked.
+  roots: D:\Code\typescript\utxfx\packages\fs\src, D:\Code\typescript\utxfx\packages\fs\tests - 1 match
+  testMatch: **/tests/**/*.test.ts, **/tests/**/*.tests.ts - 0 matches
+  testPathIgnorePatterns: \\node_modules\\ - 1 match
+  testRegex:  - 0 matches
+Pattern:  - 0 matches
+
+-- Error - exit code = 1
