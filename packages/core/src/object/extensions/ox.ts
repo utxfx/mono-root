@@ -1,11 +1,15 @@
 
+import {Extension } from '../../extension'
+
 type AnyFn = (...args: unknown[]) => unknown
 export type Extensible = boolean | number | string | object | AnyFn
 
-export class ObjectX<T> extends Object {
-	constructor(readonly value?: T) {
+export class ObjectX<T> extends Object implements Extension<T> {
+	constructor(readonly value: T) {
 		super(value)
 	}
+
+	$v(): T { return this.value }
 
 	valueOf(): object {	return this.value as object	}
 	toString(): string { return this.value?.toString() ?? '' }
@@ -20,5 +24,5 @@ export class ObjectX<T> extends Object {
 	}
 }
 
-export const ox = <T = object>(value?: T) =>
+export const ox = <T = object>(value: T) =>
 	new ObjectX<T>(value)

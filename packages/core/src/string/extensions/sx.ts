@@ -1,8 +1,12 @@
 
-export class StringX extends String {
+import { Extension } from '../../extension'
+
+export class StringX extends String implements Extension<string> {
 	constructor(public readonly value: string = '') {
 		super(value)
 	}
+
+	$v(): string { return this.value }
 }
 
 export const sx = (value: string = '') => new StringX(value)
