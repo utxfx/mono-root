@@ -2,14 +2,14 @@
 import { Extension } from '../../extension'
 
 export class ArrayX<T> extends Array<T> implements Extension<T[]> {
-	constructor(public readonly value: T[] = []) {
-		super(...value)
+	constructor(private readonly _value: T[] = []) {
+		super(..._value)
 	}
 
-	$v(): T[] { return this.value }
+	$v(): T[] { return this._value }
 }
 
-export const ax = <T>(value?: T[]) => new ArrayX<T>(value)
+export const ax = <T>(value: T[] = []) => new ArrayX<T>(value)
 
 declare global {
 	interface Array<T> {

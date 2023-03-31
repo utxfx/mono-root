@@ -8,5 +8,7 @@ describe('@utxfx/core', () => {
 		expect(ax([1]).length).toBe(1)
 		expect(ax([1, 2])[0]).toBe(1)
 		expect(ax([1, 2])[1]).toBe(2)
+		expect(ax().$v()).toEqual([])
+		expect(ax([1, 2]).$v()).toEqual([1, 2])
 	})
 })

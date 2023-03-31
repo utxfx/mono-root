@@ -9,7 +9,7 @@ declare module './ax' {
 }
 
 ArrayX.prototype.peek = function <T>() : T | undefined { 
-	return peek(this.value)
+	return peek(this.$v())
 }
 
 declare global {
