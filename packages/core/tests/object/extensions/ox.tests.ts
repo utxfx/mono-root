@@ -16,6 +16,12 @@ describe('utxfx', () => {
 		expect(ox().toString()).toBe('')
 	})
 
+	test('ox.$v', () => {
+		expect(() => ox().$v()).toThrow('ObjectX: value is undefined')
+		expect(() => ox(null).$v()).toThrow('ObjectX: value is null object')
+		expect(ox('abc').$v()).toBe('abc')
+	})
+
 	test('ox.hasOwnProperty', () => {
 		const expected = new Object('abc')
 		const actual = ox('abc')
