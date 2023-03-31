@@ -1,6 +1,15 @@
 
 import { constrain } from '../../src/function/constrain'
 
+export const argsAreGood = (arg1: string, arg2: number): boolean => {
+	return !!arg1 && arg2 > 0
+}
+
+const exportedConstraintFn = (arg1: string, arg2: number): void => {
+	constrain(exportedConstraintFn, { arg1, arg2 },
+		() => argsAreGood(arg1, arg2))
+}
+
 describe('@utxfx/core', () => {
 	test('constrain', () => {
 		const fn = (arg1: string, arg2: number): void =>
@@ -43,5 +52,11 @@ describe('@utxfx/core', () => {
 				`Precondition failure in function 'fn3':\n` +
 				`  Args 'arg1' and 'arg2' should satisfy constraint '!!arg1 && arg2 > 0'.\n` +
 				'  Arg values: arg1 = "", arg2 = 1')
+
+		expect(() => exportedConstraintFn('', 1))
+			.toThrow(
+				`Precondition failure in function 'exportedConstraintFn':\n` +
+				`  Arguments 'arg1' and 'arg2' should satisfy constraint 'argsAreGood(arg1, arg2)'.\n` +
+				'  Argument values: arg1 = "", arg2 = 1')
 	})
 })
