@@ -6,6 +6,7 @@ export default {
 	collectCoverageFrom: [
 		'src/**/*.ts',
 		'!src/**/index.ts',
+		'!src/extensions.ts',
 		'!src/JsonObject.ts'
 	],
 	coverageDirectory: 'tests/output/coverage',
