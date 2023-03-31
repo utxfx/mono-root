@@ -3,8 +3,15 @@ export type Constraint = () => boolean | string
 
 const constraintPrefix = '() =>'
 
+const ident = '[a-zA-Z_$][a-zA-Z0-9_$]*'
+const exportExpr = new RegExp(`[(]\\d+, exports.(${ident})[)]`)
+
 const getConstraintBody = (constraint: Constraint): string => {
-	return constraint.toString().slice(constraintPrefix.length).trim()
+	let result = constraint.toString().slice(constraintPrefix.length).trim()
+	const match = exportExpr.exec(result)
+	if (match)
+		result = result.replace(match[0], match[1])
+	return result
 }
 
 export interface ConstraintOptions {
