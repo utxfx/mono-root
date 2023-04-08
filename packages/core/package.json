@@ -21,9 +21,9 @@
 	],
 	"license": "MIT",
 	"repository": {
-	  "type": "git",
-	  "url": "https://github.com/utxfx/mono-root.git",
-	  "directory": "packages/core"
+		"type": "git",
+		"url": "https://github.com/utxfx/mono-root.git",
+		"directory": "packages/core"
 	},
 	"scripts": {
 		"test": "ts-node ../../src/scripts/runTests.ts",

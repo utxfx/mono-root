@@ -1,5 +1,5 @@
 
-import os from 'os'
+import { EOL } from 'os'
 
 import { JsonObject } from '../JsonObject'
 import { jsonToString } from './json'
@@ -39,7 +39,7 @@ const isWriteOptions = (value: unknown): value is WriteOptions => {
 }
 
 export const defaultWriteOptions: WriteOptions = {
-	eol: os.EOL,
+	eol: EOL,
 	tab: '\t'
 }
 
@@ -126,10 +126,24 @@ export class Writer implements WriteState {
 		return this
 	}
 
+	writeList<T>(sep: string, list: T[], write: (w: Writer, item: T) => Writer): this {
+		for (let i = 0; i < list.length; i++) {
+			if (i > 0)
+				this.put(sep)
+			this.put(write(new Writer(this._options), list[i]).toString())
+		}
+		return this
+	}
+
 	put(value: string): this {
 		_put(this._state, value, this._options)
 		return this
 	}
+
+	tab(): this { return this.put(Ch.Tab) }
+	eol(): this { return this.put(Ch.Eol) }
+	indent(): this { return this.put(Ch.Indent) }
+	dedent(): this { return this.put(Ch.Dedent) }
 }
 
 export const writer = (
