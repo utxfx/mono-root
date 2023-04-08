@@ -20,9 +20,9 @@
 	],
 	"license": "MIT",
 	"repository": {
-	  "type": "git",
-	  "url": "https://github.com/utxfx/mono-root.git",
-	  "directory": "packages/fs"
+		"type": "git",
+		"url": "https://github.com/utxfx/mono-root.git",
+		"directory": "packages/fs"
 	},
 	"scripts": {
 		"test": "ts-node ../../src/scripts/runTests.ts",
@@ -32,7 +32,8 @@
 		"re-build": "yarn clean && yarn build"
 	},
 	"dependencies": {
-		"@utxfx/core": "workspace:^"
+		"@utxfx/core": "workspace:^",
+		"glob": "^9.3.4"
 	},
 	"devDependencies": {
 		"@types/jest": "^29.4.4",
