@@ -8,17 +8,20 @@ import '@utxfx/core/src/string/extensions'
 import '@utxfx/core/src/function/extensions'
 
 
-const invalidFilePathChars = /[<>:"|?*]/g
+const validPathSegment = /^[^<>:"|?*]+$/
 const validDrive = /^[a-zA-Z]:$/
 
 export const split = (p: string): string[] =>
 	p.split(/[\\/]/g)
 
+export const normalize = (p: string): string =>
+	path.normalize(p)
+
 export const isValid = (p: string): boolean => {
-	return split(p).every((s, i) =>
+	return split(normalize(p)).every((s, i) =>
 		i == 0
-			? !invalidFilePathChars.test(s) || validDrive.test(s)
-			: !invalidFilePathChars.test(s))
+			? validPathSegment.test(s) || validDrive.test(s)
+			: validPathSegment.test(s))
 }
 
 export const isAbsolute = (p: string): boolean => {
@@ -31,7 +34,8 @@ export const isRoot = (p: string): boolean => {
 	return path.parse(p).root == p
 }
 
-export const resolvePath = (p: string = '.') => {
+export const resolve = (p: string = '.') => {
+	resolve.require({ p }, () => isValid(p))
 	return path.resolve(p)
 }
 
@@ -41,6 +45,7 @@ declare module '@utxfx/core/src/string/extensions/sx' {
 		isValidPath(): boolean
 		isAbsolutePath(): boolean
 		isRootPath(): boolean
+		normalizePath(): StringX
 		resolvePath(): StringX
 	}
 }
@@ -61,8 +66,12 @@ StringX.prototype.isRootPath = function (): boolean {
 	return isRoot(this.value)
 }
 
+StringX.prototype.normalizePath = function (): StringX {
+	return new StringX(normalize(this.value))
+}
+
 StringX.prototype.resolvePath = function (): StringX {
-	return new StringX(resolvePath(this.value))
+	return new StringX(resolve(this.value))
 }
 
 const trace = <T>(what: T): any => {
@@ -112,4 +121,4 @@ const tests = () => {
 	tell(() => drv.resolvePath())
 	tell(() => drv.resolvePath().isAbsolutePath())
 }
-tests()
+//tests()
